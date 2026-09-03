@@ -1,18 +1,5 @@
 import 'package:flutter/material.dart';
 
-// ============================================================
-// ITP107 - LABORATORY EXAMINATION (SET A)
-// Personal Portfolio Flutter Application
-//
-// TODO BEFORE SUBMISSION:
-//   1. Replace `fullName` with your own full name.
-//   2. Replace `professorName` with your ITP107 professor's full name.
-//   3. Replace `examDate` with the actual date of your exam (or leave
-//      as DateTime.now() to auto-print today's date).
-//   4. Replace the placeholder bio, skills, and profile image with
-//      your own information.
-// ============================================================
-
 void main() {
   runApp(const PortfolioApp());
 }
@@ -22,9 +9,8 @@ class PortfolioApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Consistent color scheme for the whole app.
-    const Color primaryColor = Color(0xFF1B2A4A); // deep navy
-    const Color accentColor = Color(0xFF2E9E8C); // teal accent
+    const Color primaryColor = Color(0xFF1B2A4A); 
+    const Color accentColor = Color(0xFF2E9E8C); 
     const Color backgroundColor = Color(0xFFF5F7FA);
 
     return MaterialApp(
@@ -89,9 +75,9 @@ class PortfolioHomePage extends StatefulWidget {
 
 class _PortfolioHomePageState extends State<PortfolioHomePage> {
   // ---------- EDIT THESE VALUES ----------
-  final String fullName = "Juan Miguel Dela Cruz"; // TODO: your full name
-  final String professorName = "Prof. Juan Dela Cruz"; // TODO: ITP107 professor
-  final DateTime examDate = DateTime.now(); // or set a fixed DateTime(2026, 9, 3)
+  final String fullName = "Juan Miguel Dela Cruz"; 
+  final String professorName = "Prof. Juan Dela Cruz"; 
+  final DateTime examDate = DateTime.now();
   // ----------------------------------------
 
   final String bio =
@@ -107,14 +93,12 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
     {"title": "Problem Solving", "subtitle": "Algorithms and logical thinking"},
   ];
 
-  // Feedback text shown on screen after a gesture (in addition to the
-  // required Debug Console output).
   String _statusMessage = "Tap, double-tap, or long-press the button below.";
 
   // ---------------- GESTURE HANDLERS ----------------
 
   void _handleSingleTap() {
-    // Requirement: Single Tap -> print the current date of the exam
+    // Single Tap -> print the current date of the exam
     final String formattedDate =
         "${examDate.month}/${examDate.day}/${examDate.year}";
     debugPrint("=========================================");
@@ -126,7 +110,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
   }
 
   void _handleDoubleTap() {
-    // Requirement: Double Tap -> print the full name of ITP107 professor
+    // Double Tap -> print the full name of ITP107 professor
     debugPrint("=========================================");
     debugPrint("[DOUBLE TAP] ITP107 Professor: $professorName");
     debugPrint("=========================================");
@@ -136,7 +120,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
   }
 
   void _handleLongPress() {
-    // Requirement: Long Press -> print your full name
+    // Long Press -> print your full name
     debugPrint("=========================================");
     debugPrint("[LONG PRESS] Student Name: $fullName");
     debugPrint("=========================================");
@@ -152,11 +136,9 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
     final theme = Theme.of(context);
 
     return Scaffold(
-      // Widget #1: AppBar (part of Scaffold)
       appBar: AppBar(
         title: const Text("My Portfolio"),
       ),
-      // Widget #2: ListView - scrollable body containing the whole page
       body: ListView(
         padding: const EdgeInsets.all(20),
         children: [
@@ -164,7 +146,6 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
           Center(
             child: Column(
               children: [
-                // Widget #3: CircleAvatar (built on Image) - profile photo
                 CircleAvatar(
                   radius: 55,
                   backgroundColor: theme.colorScheme.secondary,
@@ -176,7 +157,6 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                   ),
                 ),
                 const SizedBox(height: 14),
-                // Widget #4: Text - name and title
                 Text(
                   fullName,
                   style: theme.textTheme.headlineMedium,
@@ -198,7 +178,6 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
           const SizedBox(height: 24),
 
           // ---------------- ABOUT ME CARD ----------------
-          // Widget #5: Card - grouped content with elevation
           Card(
             elevation: 3,
             shape: RoundedRectangleBorder(
@@ -228,7 +207,6 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
           // ---------------- SKILLS SECTION ----------------
           Text("Skills & Interests", style: theme.textTheme.titleLarge),
           const SizedBox(height: 10),
-          // Widget #6: Container - styled wrapper with decoration
           Container(
             decoration: BoxDecoration(
               color: Colors.white,
@@ -281,14 +259,11 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
           const SizedBox(height: 16),
 
           Center(
-            // Widget #7: GestureDetector - handles tap / double tap / long press
             child: GestureDetector(
               onTap: _handleSingleTap,
               onDoubleTap: _handleDoubleTap,
               onLongPress: _handleLongPress,
               child: ElevatedButton(
-                // The button itself still uses ElevatedButton for styling;
-                // the actual gesture logic is driven by GestureDetector above.
                 onPressed: _handleSingleTap,
                 child: const Text("Click Me"),
               ),
@@ -336,18 +311,3 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
     );
   }
 }
-
-/*
-==================================================================
-WIDGET CHECKLIST (7+ different basic widgets used above):
- 1. AppBar
- 2. ListView
- 3. CircleAvatar (Image)
- 4. Text
- 5. Card
- 6. Container
- 7. GestureDetector
- Plus supporting widgets: Column, Row, Icon, ListTile, Divider,
- SizedBox, Padding, ElevatedButton, BoxDecoration, Scaffold.
-==================================================================
-*/
