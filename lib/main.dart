@@ -75,15 +75,14 @@ class PortfolioHomePage extends StatefulWidget {
 
 class _PortfolioHomePageState extends State<PortfolioHomePage> {
   // ---------- EDIT THESE VALUES ----------
-  final String fullName = "Juan Miguel Dela Cruz"; 
-  final String professorName = "Prof. Juan Dela Cruz"; 
+  final String fullName = "Josel Reimar M. Butin"; 
+  final String professorName = "Prof. Albert Q. Alforja"; 
   final DateTime examDate = DateTime.now();
   // ----------------------------------------
 
   final String bio =
       "I am a BS Information Technology student passionate about mobile "
-      "app development, UI/UX design, and problem solving. This portfolio "
-      "app was built for my ITP107 Laboratory Examination using Flutter.";
+      "app development, UI/UX design, and problem solving."
 
   final List<Map<String, String>> skills = [
     {"title": "Flutter & Dart", "subtitle": "Cross-platform mobile development"},
@@ -152,7 +151,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                   child: const CircleAvatar(
                     radius: 51,
                     backgroundImage: NetworkImage(
-                      "https://i.pravatar.cc/300?img=12",
+                      "https://media.themoviedb.org/t/p/w300_and_h450_face/rfKfSmbwdfw1UMxPb2ygpNbyypN.jpg",
                     ),
                   ),
                 ),
